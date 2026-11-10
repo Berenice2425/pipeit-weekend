@@ -1,14 +1,18 @@
 # PipeIt Weekend: my CI/CD pipeline
 
-![pipeline](https://github.com/YOUR-USERNAME/pipeit-weekend/actions/workflows/pipeline.yml/badge.svg) 
+![pipeline](https://github.com/berenice2425/pipeit-weekend/actions/workflows/pipeline.yml/badge.svg) 
 
-**Live site:**  https://YOUR-USERNAME.github.io/pipeit-weekend/
+**Live site:**  https://Berenice2425.github.io/pipeit-weekend/
 
 A CI/CD pipeline I built with GitHub Actions during PipeIt Weekend by SKILL.SCH. 
 Every change I push is tested, a web page is built by **my own custom GitHub Action**, and the result is published to GitHub Pages automatically. It also rebuilds itself every morning on a schedule. 
 
 ## How it works
 ``` push to main / daily schedule / Run workflow button | v test -> bash tests/check.sh (fails the pipeline if something is wrong) | v build -> my action: .github/actions/build-card (makes site/index.html) | v deploy -> GitHub Pages (the live site above) ```
+
+
+<img width="888" height="336" alt="{44CEF8E1-1721-48C4-B14B-1FF910EE66B4}" src="https://github.com/user-attachments/assets/4438c54c-5721-44cb-af40-f1f57b513934" />
+
 
 ## What is in this repo 
 | File | What it does |
@@ -20,15 +24,17 @@ Every change I push is tested, a web page is built by **my own custom GitHub Act
 | `tests/check.sh` | My test: checks this README has a title | 
 
 
+
+<img width="913" height="385" alt="{BB8EB166-42B6-46EC-9C8F-DA8A65265573}" src="https://github.com/user-attachments/assets/51d06837-5483-40eb-87e3-30f6b3bd543f" />
+
+
 <img width="856" height="450" alt="{E92A566D-47C2-4DFA-88B4-DBC6069999C4}" src="https://github.com/user-attachments/assets/f5c1148f-4573-404b-a8ab-de447db3c898" />
 
-<img width="915" height="486" alt="{32A75497-2306-48A7-B16B-567A9F695437}" src="https://github.com/user-attachments/assets/d966a5ce-b605-46c3-86de-b
 
 ## My custom action `build-card` is a composite action.
 It takes two inputs, `name` (required) and `message` (optional), writes `site/index.html` with the run number, commit and time, and adds a summary to the run page. 
-```yaml - uses: ./.github/actions/build-card with: name: Your Name message: Built automatically by my own GitHub Action ``` 
 
-<img width="888" height="336" alt="{44CEF8E1-1721-48C4-B14B-1FF910EE66B4}" src="https://github.com/user-attachments/assets/4438c54c-5721-44cb-af40-f1f57b513934" />
+```yaml - uses: ./.github/actions/build-card with: name: Your Name message: Built automatically by my own GitHub Action ``` 
 
 
 ## What I learned 
