@@ -28,9 +28,6 @@ Every change I push is tested, a web page is built by **my own custom GitHub Act
 <img width="913" height="385" alt="{BB8EB166-42B6-46EC-9C8F-DA8A65265573}" src="https://github.com/user-attachments/assets/51d06837-5483-40eb-87e3-30f6b3bd543f" />
 
 
-<img width="856" height="450" alt="{E92A566D-47C2-4DFA-88B4-DBC6069999C4}" src="https://github.com/user-attachments/assets/f5c1148f-4573-404b-a8ab-de447db3c898" />
-
-
 ## My custom action `build-card` is a composite action.
 It takes two inputs, `name` (required) and `message` (optional), writes `site/index.html` with the run number, commit and time, and adds a summary to the run page. 
 
