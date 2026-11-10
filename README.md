@@ -2,6 +2,8 @@
 
 ![pipeline](https://github.com/berenice2425/pipeit-weekend/actions/workflows/pipeline.yml/badge.svg) 
 
+<img width="104" height="94" alt="{94314FDB-1CEF-4917-8F71-B8FF74432D40}" src="https://github.com/user-attachments/assets/c18c278d-5174-4acc-8140-4bbbb6daa0e9" />
+
 **Live site:**  https://Berenice2425.github.io/pipeit-weekend/
 
 A CI/CD pipeline I built with GitHub Actions during PipeIt Weekend by SKILL.SCH. 
