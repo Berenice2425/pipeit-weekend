@@ -1,2 +1,39 @@
-# pipeit-weekend
-This project demonstrates the core foundational concepts of Continuous Integration and Continuous Deployment (CI/CD) using GitHub Actions. The objective was to transition from manual code management to fully automated workflows by configuring a cloud-based automated environment (a "robot") that reacts to code changes in real-time.
+# PipeIt Weekend: my CI/CD pipeline
+
+![pipeline](https://github.com/YOUR-USERNAME/pipeit-weekend/actions/workflows/pipeline.yml/badge.svg) 
+
+**Live site:** https://YOUR-USERNAME.github.io/pipeit-weekend/
+A CI/CD pipeline I built with GitHub Actions during PipeIt Weekend by SKILL.SCH. 
+Every change I push is tested, a web page is built by **my own custom GitHub Action**, and the result is published to GitHub Pages automatically. It also rebuilds itself every morning on a schedule. 
+
+## How it works
+``` push to main / daily schedule / Run workflow button | v test -> bash tests/check.sh (fails the pipeline if something is wrong) | v build -> my action: .github/actions/build-card (makes site/index.html) | v deploy -> GitHub Pages (the live site above) ```
+
+## What is in this repo 
+| File | What it does | |------|--------------| 
+| `.github/workflows/hello.yml` | My first workflow: prints a message on every push |
+| `.github/workflows/ci.yml` | Runs my test on every push and pull request | 
+| `.github/workflows/pipeline.yml` | Test, build with my action, deploy to GitHub Pages | 
+| `.github/actions/build-card/action.yml` | My custom action: builds the status page |
+| `tests/check.sh` | My test: checks this README has a title | 
+<img width="856" height="450" alt="{E92A566D-47C2-4DFA-88B4-DBC6069999C4}" src="https://github.com/user-attachments/assets/f5c1148f-4573-404b-a8ab-de447db3c898" />
+<img width="915" height="486" alt="{32A75497-2306-48A7-B16B-567A9F695437}" src="https://github.com/user-attachments/assets/d966a5ce-b605-46c3-86de-b
+
+## My custom action `build-card` is a composite action.
+It takes two inputs, `name` (required) and `message` (optional), writes `site/index.html` with the run number, commit and time, and adds a summary to the run page. 
+```yaml - uses: ./.github/actions/build-card with: name: Your Name message: Built automatically by my own GitHub Action ``` 
+<img width="888" height="336" alt="{44CEF8E1-1721-48C4-B14B-1FF910EE66B4}" src="https://github.com/user-attachments/assets/4438c54c-5721-44cb-af40-f1f57b513934" />
+
+
+## What I learned 
+- Workflows live in `.github/workflows` and run on triggers: push, pull_request, schedule and workflow_dispatch.
+- `needs:` makes jobs run in order, so a failing test stops a broken site going live.
+- How to write and reuse my own action with inputs and outputs.
+- How to read a red run's log and fix it. ## What I would add next
+- [ ] Run the checks on pull requests only and protect the main branch
+- [ ] Add a second test
+- [ ] Publish my action so other repos can use it
+
+ ## About 
+ Built by Berenice during [PipeIt Weekend](https://skill-sch.com/pipeit) by SKILL.SCH.
+ <img width="359" height="330" alt="{094B25C2-AC25-4BD2-9636-1DC2CC5E845A}" src="https://github.com/user-attachments/assets/3fdf4e5e-ff69-4f60-b1c8-caedbe1af4f3" />
