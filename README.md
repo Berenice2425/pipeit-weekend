@@ -11,12 +11,14 @@ Every change I push is tested, a web page is built by **my own custom GitHub Act
 ``` push to main / daily schedule / Run workflow button | v test -> bash tests/check.sh (fails the pipeline if something is wrong) | v build -> my action: .github/actions/build-card (makes site/index.html) | v deploy -> GitHub Pages (the live site above) ```
 
 ## What is in this repo 
-| File | What it does | |------|--------------| 
+| File | What it does |
+|------|--------------| 
 | `.github/workflows/hello.yml` | My first workflow: prints a message on every push |
 | `.github/workflows/ci.yml` | Runs my test on every push and pull request | 
 | `.github/workflows/pipeline.yml` | Test, build with my action, deploy to GitHub Pages | 
 | `.github/actions/build-card/action.yml` | My custom action: builds the status page |
 | `tests/check.sh` | My test: checks this README has a title | 
+
 
 <img width="856" height="450" alt="{E92A566D-47C2-4DFA-88B4-DBC6069999C4}" src="https://github.com/user-attachments/assets/f5c1148f-4573-404b-a8ab-de447db3c898" />
 
